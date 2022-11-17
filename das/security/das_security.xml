@@ -140,8 +140,8 @@
       <field name="groups" eval="[(4, ref('base.group_user'))]"/>
     </record>
 
-    <record id="rule_project_hide_fic" model="ir.rule">
-      <field name="name">Hide Project FIC</field>
+    <record id="rule_project_only_read_fic" model="ir.rule">
+      <field name="name">Only read Project FIC</field>
       <field ref="das.model_project_project" name="model_id"/>
       <field name="domain_force">[('key', '=', "fic_project")]</field>
       <field name="perm_write" eval="0"/>

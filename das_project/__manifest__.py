@@ -6,7 +6,7 @@
     'category': 'Hidden',
     'description': """
 DAS Project  
-============
+==============
 """,
     'depends': ['das_base'],
     'data': [
