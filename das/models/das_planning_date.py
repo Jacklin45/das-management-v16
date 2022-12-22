@@ -1,11 +1,30 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
+##############################################################################
+#
+#    OpenERP, Open Source Management Solution
+#    Copyright (C) 2022 eTech (<https://www.etechconsulting-mg.com/>). All Rights Reserved
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+
+import time
+from datetime import datetime, date, timedelta
+
+from lxml import etree
 
 from odoo import models, fields, api
-from odoo.addons.resource.models.resource import Intervals
-from pytz import timezone, utc
-from datetime import datetime, date, timedelta
-import time
-from lxml import etree
 
 
 class DasPlanningDate(models.Model):
@@ -120,7 +139,6 @@ class DasPlanningDate(models.Model):
     def get_compute_ic(self):
         # self.search([])._count_current_global_leave()
         self.search([])._compute_ic()
-
 
     @api.depends('planning_id', 'globals_leaves_ids', 'is_no_counting', 'is_global_leave')
     def _compute_required(self):

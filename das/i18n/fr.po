@@ -1,0 +1,1414 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* das
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e-20221204\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-22 07:00+0000\n"
+"PO-Revision-Date: 2022-12-22 07:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: das
+#. odoo-python
+#: code:addons/das/models/das_planning.py:0
+#, python-format
+msgid "%s h/d %s"
+msgstr "%s h/j %s"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_availability_filter_wizard_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_analysis_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_fictional_batch_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_account_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_planning_form
+#: model_terms:ir.ui.view,arch_db:das.view_planning_division_wizard_form
+msgid ""
+"<i class=\"fa fa-long-arrow-right mx-1\" aria-label=\"Arrow icon\" "
+"title=\"Arrow\"/>"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_config_setting_inherit
+msgid "<span class=\"o_form_label\">Billable goal</span>"
+msgstr "<span class=\"o_form_label\">Objectif facturable</span>"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_planning_fictional_wizard
+msgid ""
+"<span nolabel=\"1\">This wizard will generate \" Fictional Planning \" for all selected\n"
+"                  employee(s)\n"
+"                  based on the dates.\n"
+"                </span>"
+msgstr ""
+"Générer des plannings fictifs pour toutes les ressources sélectionnées"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_config_setting_inherit
+msgid "<span>%</span>"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_account_reference_form
+msgid "<span>Ar</span>"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_planning_form
+msgid "<span>h/j</span>"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_planning_form
+msgid "<span>h</span>"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_account_reference_form
+msgid "<span>j</span>"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__avv_hours
+msgid "AVV"
+msgstr ""
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_planning_account
+#: model:ir.model.fields,field_description:das.field_das_planning__account_id
+#: model:ir.model.fields,field_description:das.field_das_planning_date__account_id
+#: model:ir.model.fields,field_description:das.field_project_project__account_count
+#: model:ir.ui.menu,name:das.menu_das_planning_account
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+msgid "Account"
+msgstr "Compte"
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_account_reference
+msgid "Account Reference"
+msgstr "Réference compte"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_category__account_count
+#: model:ir.model.fields,field_description:das.field_das_category_type__category_count
+msgid "Account count"
+msgstr "Compteur compte"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__account_label
+#: model:ir.model.fields,field_description:das.field_das_planning_date__account_label
+msgid "Account label"
+msgstr "Label compte"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__reference_id
+#: model:ir.model.fields,field_description:das.field_das_locality__account_reference_ids
+#: model:ir.ui.menu,name:das.menu_das_order
+#: model_terms:ir.ui.view,arch_db:das.view_das_account_reference_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_account_reference_tree
+msgid "Account reference"
+msgstr "Réference compte"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_locality__reference_account_count
+msgid "Account reference count"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_category__account_ids
+#: model:ir.model.fields,field_description:das.field_project_project__account_ids
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_category_form
+#: model_terms:ir.ui.view,arch_db:das.view_edit_project_inherit
+msgid "Accounts"
+msgstr "Comptes"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__message_needaction
+#: model:ir.model.fields,field_description:das.field_das_account_reference__message_needaction
+#: model:ir.model.fields,field_description:das.field_das_category__message_needaction
+#: model:ir.model.fields,field_description:das.field_das_category_type__message_needaction
+#: model:ir.model.fields,field_description:das.field_das_planning__message_needaction
+msgid "Action Needed"
+msgstr "Nécessite une action"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__active
+#: model:ir.model.fields,field_description:das.field_das_planning_date__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__activity_ids
+#: model:ir.model.fields,field_description:das.field_das_account_reference__activity_ids
+#: model:ir.model.fields,field_description:das.field_das_category__activity_ids
+#: model:ir.model.fields,field_description:das.field_das_category_type__activity_ids
+#: model:ir.model.fields,field_description:das.field_das_planning__activity_ids
+msgid "Activities"
+msgstr "Activités"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__activity_exception_decoration
+#: model:ir.model.fields,field_description:das.field_das_account_reference__activity_exception_decoration
+#: model:ir.model.fields,field_description:das.field_das_category__activity_exception_decoration
+#: model:ir.model.fields,field_description:das.field_das_category_type__activity_exception_decoration
+#: model:ir.model.fields,field_description:das.field_das_planning__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activité d'exception de décoration"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__activity_state
+#: model:ir.model.fields,field_description:das.field_das_account_reference__activity_state
+#: model:ir.model.fields,field_description:das.field_das_category__activity_state
+#: model:ir.model.fields,field_description:das.field_das_category_type__activity_state
+#: model:ir.model.fields,field_description:das.field_das_planning__activity_state
+msgid "Activity State"
+msgstr "État de l'Activité"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__activity_type_icon
+#: model:ir.model.fields,field_description:das.field_das_account_reference__activity_type_icon
+#: model:ir.model.fields,field_description:das.field_das_category__activity_type_icon
+#: model:ir.model.fields,field_description:das.field_das_category_type__activity_type_icon
+#: model:ir.model.fields,field_description:das.field_das_planning__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icône de type d'activité"
+
+#. module: das
+#. odoo-javascript
+#: code:addons/das/static/src/xml/web_gantt_views.xml:0
+#, python-format
+msgid "Add fictional"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_analysis__tot_account
+msgid "All Account"
+msgstr "Compte total"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_analysis__tot_account_fact
+msgid "All billable account"
+msgstr "Compte facturable total"
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_planning_analysis
+#: model_terms:ir.ui.view,arch_db:das.view_das_analysis_form
+msgid "Analyse"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_analysis__analyse
+msgid "Analyse %"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_analysis_form
+msgid "Analyser"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+msgid "Archived"
+msgstr "Archivé"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_planning_fictional_wizard
+msgid "Are you sure to apply?"
+msgstr "Voulez-vous vraiment appliquer?"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__message_attachment_count
+#: model:ir.model.fields,field_description:das.field_das_account_reference__message_attachment_count
+#: model:ir.model.fields,field_description:das.field_das_category__message_attachment_count
+#: model:ir.model.fields,field_description:das.field_das_category_type__message_attachment_count
+#: model:ir.model.fields,field_description:das.field_das_planning__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: das
+#: model:ir.ui.menu,name:das.menu_das_planning_availability
+#: model_terms:ir.ui.view,arch_db:das.view_res_availability_gantt
+msgid "Availability"
+msgstr "Disponiblité"
+
+#. module: das
+#: model:ir.model,name:das.model_availability_filter_wizard
+msgid "Availability Filter Wizard"
+msgstr "Wizard Filtre de disponiblité"
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_availability_filter_wizard
+msgid "Availability filter"
+msgstr "Filtre de disponiblité"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__available_day
+msgid "Available day"
+msgstr "Dispo J"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__available_hour
+msgid "Available hour"
+msgstr "Dispo H"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard__batch_id
+msgid "Batch name"
+msgstr "Période"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_res_config_settings__billable_goal
+msgid "Billable goal"
+msgstr "Objectif facturable"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_analysis__total_hours_fact
+msgid "Billable total hours"
+msgstr "Totale heure"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account_reference__budget
+#: model_terms:ir.ui.view,arch_db:das.view_das_account_reference_form
+msgid "Budget"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+msgid "Business Analyst"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_availability_filter_wizard_form
+#: model_terms:ir.ui.view,arch_db:das.view_planning_division_wizard_form
+#: model_terms:ir.ui.view,arch_db:das.view_planning_fictional_wizard
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_category_type_form
+msgid "Categories"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__category_id
+#: model:ir.model.fields,field_description:das.field_das_account_reference__category_id
+#: model:ir.model.fields,field_description:das.field_das_category_type__category_ids
+#: model:ir.model.fields,field_description:das.field_das_planning_date__category_id
+#: model:ir.ui.menu,name:das.menu_das_category
+#: model_terms:ir.ui.view,arch_db:das.view_das_fictional_batch_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_category_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_category_tree
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_category_type_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_category_type_tree
+msgid "Category Type"
+msgstr "Type catégorie"
+
+#. module: das
+#: model:ir.ui.menu,name:das.menu_das_category_type
+msgid "Category type"
+msgstr "Type catégorie"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_category__color
+#: model:ir.model.fields,field_description:das.field_das_planning__color
+#: model:ir.model.fields,field_description:das.field_das_planning_date__color
+msgid "Color"
+msgstr "Couleur"
+
+#. module: das
+#: model:ir.model,name:das.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de config"
+
+#. module: das
+#: model:ir.ui.menu,name:das.menu_das_planning_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_availability_filter_wizard_form
+#: model_terms:ir.ui.view,arch_db:das.view_planning_division_wizard_form
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: das
+#: model:ir.ui.menu,name:das.menu_das_planning_date
+msgid "Consolidation"
+msgstr ""
+
+#. module: das
+#: model:ir.model,name:das.model_das_fictional_batch
+msgid "Create fictional batch"
+msgstr "Créer une période planning "
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_availability_filter_wizard__create_uid
+#: model:ir.model.fields,field_description:das.field_das_account__create_uid
+#: model:ir.model.fields,field_description:das.field_das_account_reference__create_uid
+#: model:ir.model.fields,field_description:das.field_das_analysis__create_uid
+#: model:ir.model.fields,field_description:das.field_das_category__create_uid
+#: model:ir.model.fields,field_description:das.field_das_category_type__create_uid
+#: model:ir.model.fields,field_description:das.field_das_fictional_batch__create_uid
+#: model:ir.model.fields,field_description:das.field_das_locality__create_uid
+#: model:ir.model.fields,field_description:das.field_das_planning__create_uid
+#: model:ir.model.fields,field_description:das.field_das_planning_date__create_uid
+#: model:ir.model.fields,field_description:das.field_planning_division_wizard__create_uid
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard__create_uid
+#: model:ir.model.fields,field_description:das.field_res_availability__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_availability_filter_wizard__create_date
+#: model:ir.model.fields,field_description:das.field_das_account__create_date
+#: model:ir.model.fields,field_description:das.field_das_account_reference__create_date
+#: model:ir.model.fields,field_description:das.field_das_analysis__create_date
+#: model:ir.model.fields,field_description:das.field_das_category__create_date
+#: model:ir.model.fields,field_description:das.field_das_category_type__create_date
+#: model:ir.model.fields,field_description:das.field_das_fictional_batch__create_date
+#: model:ir.model.fields,field_description:das.field_das_locality__create_date
+#: model:ir.model.fields,field_description:das.field_das_planning__create_date
+#: model:ir.model.fields,field_description:das.field_das_planning_date__create_date
+#: model:ir.model.fields,field_description:das.field_planning_division_wizard__create_date
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard__create_date
+#: model:ir.model.fields,field_description:das.field_res_availability__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account_reference__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account_reference__currency_mga
+msgid "Currency mga"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_date_filter
+msgid "Current month"
+msgstr "Mois en cours"
+
+#. module: das
+#: model:ir.model,name:das.model_das_account_reference
+msgid "DAS Account Reference"
+msgstr "Réference compte DAS"
+
+#. module: das
+#: model:ir.model,name:das.model_das_category_type
+msgid "DAS Category Type"
+msgstr "Type categorie DAS"
+
+#. module: das
+#: model:ir.model,name:das.model_das_locality
+msgid "DAS Locality"
+msgstr ""
+
+#. module: das
+#: model:ir.model,name:das.model_das_planning
+msgid "DAS Planning"
+msgstr "Planification DAS"
+
+#. module: das
+#: model:ir.model,name:das.model_das_account
+msgid "DAS Planning Account"
+msgstr "Comptes Planification DAS"
+
+#. module: das
+#: model:ir.model,name:das.model_das_planning_date
+msgid "DAS Planning Date"
+msgstr "Planification DAS par Date"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__daily_hours
+#: model:ir.model.fields,field_description:das.field_das_planning_date__daily_hours
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_planning_form
+msgid "Daily hours"
+msgstr "Heures journalières"
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_planning_category
+msgid "Das Category"
+msgstr ""
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_planning_category_type
+msgid "Das Category Type"
+msgstr ""
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_fictional_batch
+msgid "Das Fictional Batch"
+msgstr "Période Planning"
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_planning_locality
+msgid "Das Locality"
+msgstr "Das Localité"
+
+#. module: das
+#: model:ir.model,name:das.model_das_analysis
+msgid "Das analysis"
+msgstr "Analyse DAS"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__date
+#: model_terms:ir.ui.view,arch_db:das.view_availability_filter_wizard_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_analysis_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_fictional_batch_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_account_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_date_filter
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_planning_form
+msgid "Date"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__planning_date
+msgid "Date Planning"
+msgstr "Date de plafinication"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+msgid "Date de début"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__date_timestamp
+msgid "Date timestamp"
+msgstr ""
+
+#. module: das
+#: model:ir.ui.menu,name:das.menu_das_planning_not_planned
+msgid "Day not planned"
+msgstr "Jours non planifié"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__department_id
+#: model:ir.model.fields,field_description:das.field_das_analysis__department_id
+#: model:ir.model.fields,field_description:das.field_das_planning__department_id
+#: model:ir.model.fields,field_description:das.field_das_planning_date__department_id
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard__department_id
+#: model:ir.model.fields,field_description:das.field_res_availability__department_id
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_date_filter
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+#: model_terms:ir.ui.view,arch_db:das.view_res_availability_search
+msgid "Department"
+msgstr "Département"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__resource_departure_date
+#: model:ir.model.fields,field_description:das.field_das_planning_date__resource_departure_date
+msgid "Departure date"
+msgstr "Date de départ"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__resource_departure_reason_id
+msgid "Departure reason"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__description
+#: model:ir.model.fields,field_description:das.field_das_category_type__description
+#: model:ir.model.fields,field_description:das.field_das_locality__description
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_account_form
+msgid "Description"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+msgid "Developer"
+msgstr "Développeur"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_availability_filter_wizard__display_name
+#: model:ir.model.fields,field_description:das.field_das_account__display_name
+#: model:ir.model.fields,field_description:das.field_das_account_reference__display_name
+#: model:ir.model.fields,field_description:das.field_das_analysis__display_name
+#: model:ir.model.fields,field_description:das.field_das_category__display_name
+#: model:ir.model.fields,field_description:das.field_das_category_type__display_name
+#: model:ir.model.fields,field_description:das.field_das_fictional_batch__display_name
+#: model:ir.model.fields,field_description:das.field_das_locality__display_name
+#: model:ir.model.fields,field_description:das.field_das_planning__display_name
+#: model:ir.model.fields,field_description:das.field_das_planning_date__display_name
+#: model:ir.model.fields,field_description:das.field_planning_division_wizard__display_name
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard__display_name
+#: model:ir.model.fields,field_description:das.field_res_availability__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_planning_division_wizard
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_planning_form
+msgid "Divide Planning"
+msgstr "Diviser Planification"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_planning_division_wizard_form
+msgid "Division date"
+msgstr "Date de division"
+
+#. module: das
+#: model:ir.model,name:das.model_hr_employee
+#: model:ir.ui.menu,name:das.menu_das_employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_availability_filter_wizard__end_date
+#: model:ir.model.fields,field_description:das.field_das_fictional_batch__end_date
+msgid "End Date"
+msgstr "Date fin"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__end_date
+#: model:ir.model.fields,field_description:das.field_das_account_reference__end_date
+#: model:ir.model.fields,field_description:das.field_das_analysis__end_date
+#: model:ir.model.fields,field_description:das.field_das_planning__end_date
+#: model:ir.model.fields,field_description:das.field_planning_division_wizard__end_date
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard__end_date
+#: model:ir.model.fields,field_description:das.field_res_availability__end_date
+msgid "End date"
+msgstr "Date fin"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__fac_hours
+msgid "FAC"
+msgstr ""
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_fictional
+#: model_terms:ir.ui.view,arch_db:das.view_das_fictional_tree
+msgid "Fictional"
+msgstr ""
+
+#. module: das
+#: model:ir.ui.menu,name:das.menu_das_fictional_batch
+#: model_terms:ir.ui.view,arch_db:das.view_das_fictional_batch_tree
+msgid "Fictional Batch"
+msgstr "Période planning"
+
+#. module: das
+#: model:ir.ui.menu,name:das.menu_das_fictional
+msgid "Fictional planning"
+msgstr "Planification fictif"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_planning_fictional_wizard
+msgid "Fictional plannings"
+msgstr "Planification fictif"
+
+#. module: das
+#: model:project.project,name:das.das_fictional_project
+msgid "Fictional project"
+msgstr "Projet fictif"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__message_follower_ids
+#: model:ir.model.fields,field_description:das.field_das_account_reference__message_follower_ids
+#: model:ir.model.fields,field_description:das.field_das_category__message_follower_ids
+#: model:ir.model.fields,field_description:das.field_das_category_type__message_follower_ids
+#: model:ir.model.fields,field_description:das.field_das_planning__message_follower_ids
+msgid "Followers"
+msgstr "Abonnés"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__message_partner_ids
+#: model:ir.model.fields,field_description:das.field_das_account_reference__message_partner_ids
+#: model:ir.model.fields,field_description:das.field_das_category__message_partner_ids
+#: model:ir.model.fields,field_description:das.field_das_category_type__message_partner_ids
+#: model:ir.model.fields,field_description:das.field_das_planning__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnés (Partenaires)"
+
+#. module: das
+#: model:ir.model.fields,help:das.field_das_account__activity_type_icon
+#: model:ir.model.fields,help:das.field_das_account_reference__activity_type_icon
+#: model:ir.model.fields,help:das.field_das_category__activity_type_icon
+#: model:ir.model.fields,help:das.field_das_category_type__activity_type_icon
+#: model:ir.model.fields,help:das.field_das_planning__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icône Font Awesome e.g. fa-tasks"
+
+#. module: das
+#. odoo-javascript
+#: code:addons/das/static/src/xml/web_gantt_views.xml:0
+#: model_terms:ir.ui.view,arch_db:das.view_planning_fictional_wizard
+#, python-format
+msgid "Generate"
+msgstr "Générer"
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_planning_fictional
+msgid "Generate Planning"
+msgstr "Générer"
+
+#. module: das
+#: model:ir.model,name:das.model_planning_fictional_wizard
+msgid "Generate Planning fictional on Wizard"
+msgstr "Générer une plannification fictif à partir d'un wizard"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__is_global_leave
+msgid "Global leave"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__globals_leaves_ids
+#: model:ir.model.fields,field_description:das.field_das_planning_date__globals_leaves_ids
+msgid "Global leave of current month"
+msgstr ""
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_date_filter
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+#: model_terms:ir.ui.view,arch_db:das.view_res_availability_search
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__has_message
+#: model:ir.model.fields,field_description:das.field_das_account_reference__has_message
+#: model:ir.model.fields,field_description:das.field_das_category__has_message
+#: model:ir.model.fields,field_description:das.field_das_category_type__has_message
+#: model:ir.model.fields,field_description:das.field_das_planning__has_message
+msgid "Has Message"
+msgstr "A un message"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_res_availability__hour
+msgid "Hour"
+msgstr "Heure"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__ic
+msgid "IC"
+msgstr ""
+
+#. module: das
+#: model:ir.actions.server,name:das.ic_calcul_cron_ir_actions_server
+#: model:ir.cron,cron_name:das.ic_calcul_cron
+#: model:ir.cron,name:das.ic_calcul_cron
+msgid "IC calcul updater"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_availability_filter_wizard__id
+#: model:ir.model.fields,field_description:das.field_das_account__id
+#: model:ir.model.fields,field_description:das.field_das_account_reference__id
+#: model:ir.model.fields,field_description:das.field_das_analysis__id
+#: model:ir.model.fields,field_description:das.field_das_category__id
+#: model:ir.model.fields,field_description:das.field_das_category_type__id
+#: model:ir.model.fields,field_description:das.field_das_fictional_batch__id
+#: model:ir.model.fields,field_description:das.field_das_locality__id
+#: model:ir.model.fields,field_description:das.field_das_planning__id
+#: model:ir.model.fields,field_description:das.field_das_planning_date__id
+#: model:ir.model.fields,field_description:das.field_planning_division_wizard__id
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard__id
+#: model:ir.model.fields,field_description:das.field_res_availability__id
+msgid "ID"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__int_hours
+msgid "INT"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__activity_exception_icon
+#: model:ir.model.fields,field_description:das.field_das_account_reference__activity_exception_icon
+#: model:ir.model.fields,field_description:das.field_das_category__activity_exception_icon
+#: model:ir.model.fields,field_description:das.field_das_category_type__activity_exception_icon
+#: model:ir.model.fields,field_description:das.field_das_planning__activity_exception_icon
+msgid "Icon"
+msgstr "Icône"
+
+#. module: das
+#: model:ir.model.fields,help:das.field_das_account__activity_exception_icon
+#: model:ir.model.fields,help:das.field_das_account_reference__activity_exception_icon
+#: model:ir.model.fields,help:das.field_das_category__activity_exception_icon
+#: model:ir.model.fields,help:das.field_das_category_type__activity_exception_icon
+#: model:ir.model.fields,help:das.field_das_planning__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icône pour indiquer une activité d'exception."
+
+#. module: das
+#: model:ir.model.fields,help:das.field_das_account__message_needaction
+#: model:ir.model.fields,help:das.field_das_account_reference__message_needaction
+#: model:ir.model.fields,help:das.field_das_category__message_needaction
+#: model:ir.model.fields,help:das.field_das_category_type__message_needaction
+#: model:ir.model.fields,help:das.field_das_planning__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si coché, de nouveaux messages demandent votre attention."
+
+#. module: das
+#: model:ir.model.fields,help:das.field_das_account__message_has_error
+#: model:ir.model.fields,help:das.field_das_account__message_has_sms_error
+#: model:ir.model.fields,help:das.field_das_account_reference__message_has_error
+#: model:ir.model.fields,help:das.field_das_account_reference__message_has_sms_error
+#: model:ir.model.fields,help:das.field_das_category__message_has_error
+#: model:ir.model.fields,help:das.field_das_category__message_has_sms_error
+#: model:ir.model.fields,help:das.field_das_category_type__message_has_error
+#: model:ir.model.fields,help:das.field_das_category_type__message_has_sms_error
+#: model:ir.model.fields,help:das.field_das_planning__message_has_error
+#: model:ir.model.fields,help:das.field_das_planning__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si actif, certains messages ont une erreur de livraison."
+
+#. module: das
+#: model:ir.model.fields,help:das.field_das_planning__resource_id_active
+#: model:ir.model.fields,help:das.field_das_planning_date__resource_id_active
+msgid ""
+"If the active field is set to False, it will allow you to hide the resource "
+"record without removing it."
+msgstr ""
+"Si vous cochez la case \"Active\", la resource sera cachée mais pas "
+"supprimée."
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+msgid "Integrator"
+msgstr "Intégrateur"
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_planning_date_intercontrat
+#: model:ir.ui.menu,name:das.menu_das_planning_intercontract
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_date_filter
+msgid "Intercontract"
+msgstr "Intercontrat"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__intercontrat
+msgid "Intercontrat"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__message_is_follower
+#: model:ir.model.fields,field_description:das.field_das_account_reference__message_is_follower
+#: model:ir.model.fields,field_description:das.field_das_category__message_is_follower
+#: model:ir.model.fields,field_description:das.field_das_category_type__message_is_follower
+#: model:ir.model.fields,field_description:das.field_das_planning__message_is_follower
+msgid "Is Follower"
+msgstr "Est un abonné"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_category_type__is_intercontrat
+#: model:ir.model.fields,field_description:das.field_das_planning_date__is_intercontrat
+msgid "Is intercontrat"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_category_type__is_no_counting
+#: model:ir.model.fields,field_description:das.field_das_planning__is_no_counting
+#: model:ir.model.fields,field_description:das.field_das_planning_date__is_no_counting
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_planning_form
+msgid "Is no counting"
+msgstr "A ne pas compter"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__daily_not_planned
+msgid "JNPL"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__planned_days
+msgid "JPL"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__jreq
+msgid "JREQ"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_availability_filter_wizard__job_ids
+#: model:ir.model.fields,field_description:das.field_das_planning__job
+#: model:ir.model.fields,field_description:das.field_das_planning_date__job_id
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard__resource_ids
+#: model_terms:ir.ui.view,arch_db:das.view_res_availability_search
+msgid "Job"
+msgstr "Poste"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_res_availability__job_id
+msgid "Job Position"
+msgstr "Poste occupé"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__job_id_type
+msgid "Job type"
+msgstr "Type de poste"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_availability_filter_wizard____last_update
+#: model:ir.model.fields,field_description:das.field_das_account____last_update
+#: model:ir.model.fields,field_description:das.field_das_account_reference____last_update
+#: model:ir.model.fields,field_description:das.field_das_analysis____last_update
+#: model:ir.model.fields,field_description:das.field_das_category____last_update
+#: model:ir.model.fields,field_description:das.field_das_category_type____last_update
+#: model:ir.model.fields,field_description:das.field_das_fictional_batch____last_update
+#: model:ir.model.fields,field_description:das.field_das_locality____last_update
+#: model:ir.model.fields,field_description:das.field_das_planning____last_update
+#: model:ir.model.fields,field_description:das.field_das_planning_date____last_update
+#: model:ir.model.fields,field_description:das.field_planning_division_wizard____last_update
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard____last_update
+#: model:ir.model.fields,field_description:das.field_res_availability____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_availability_filter_wizard__write_uid
+#: model:ir.model.fields,field_description:das.field_das_account__write_uid
+#: model:ir.model.fields,field_description:das.field_das_account_reference__write_uid
+#: model:ir.model.fields,field_description:das.field_das_analysis__write_uid
+#: model:ir.model.fields,field_description:das.field_das_category__write_uid
+#: model:ir.model.fields,field_description:das.field_das_category_type__write_uid
+#: model:ir.model.fields,field_description:das.field_das_fictional_batch__write_uid
+#: model:ir.model.fields,field_description:das.field_das_locality__write_uid
+#: model:ir.model.fields,field_description:das.field_das_planning__write_uid
+#: model:ir.model.fields,field_description:das.field_das_planning_date__write_uid
+#: model:ir.model.fields,field_description:das.field_planning_division_wizard__write_uid
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard__write_uid
+#: model:ir.model.fields,field_description:das.field_res_availability__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_availability_filter_wizard__write_date
+#: model:ir.model.fields,field_description:das.field_das_account__write_date
+#: model:ir.model.fields,field_description:das.field_das_account_reference__write_date
+#: model:ir.model.fields,field_description:das.field_das_analysis__write_date
+#: model:ir.model.fields,field_description:das.field_das_category__write_date
+#: model:ir.model.fields,field_description:das.field_das_category_type__write_date
+#: model:ir.model.fields,field_description:das.field_das_fictional_batch__write_date
+#: model:ir.model.fields,field_description:das.field_das_locality__write_date
+#: model:ir.model.fields,field_description:das.field_das_planning__write_date
+#: model:ir.model.fields,field_description:das.field_das_planning_date__write_date
+#: model:ir.model.fields,field_description:das.field_planning_division_wizard__write_date
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard__write_date
+#: model:ir.model.fields,field_description:das.field_res_availability__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account_reference__locality_id
+#: model:ir.model.fields,field_description:das.field_das_locality__locality
+#: model:ir.ui.menu,name:das.menu_das_locality
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_locality_form
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_locality_tree
+msgid "Locality"
+msgstr "Localité"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__mgt_hours
+msgid "MGT"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__message_main_attachment_id
+#: model:ir.model.fields,field_description:das.field_das_account_reference__message_main_attachment_id
+#: model:ir.model.fields,field_description:das.field_das_category__message_main_attachment_id
+#: model:ir.model.fields,field_description:das.field_das_category_type__message_main_attachment_id
+#: model:ir.model.fields,field_description:das.field_das_planning__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Pièce jointe principale"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__message_has_error
+#: model:ir.model.fields,field_description:das.field_das_account_reference__message_has_error
+#: model:ir.model.fields,field_description:das.field_das_category__message_has_error
+#: model:ir.model.fields,field_description:das.field_das_category_type__message_has_error
+#: model:ir.model.fields,field_description:das.field_das_planning__message_has_error
+msgid "Message Delivery error"
+msgstr "Erreur d'envoi du message"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__message_ids
+#: model:ir.model.fields,field_description:das.field_das_account_reference__message_ids
+#: model:ir.model.fields,field_description:das.field_das_category__message_ids
+#: model:ir.model.fields,field_description:das.field_das_category_type__message_ids
+#: model:ir.model.fields,field_description:das.field_das_planning__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__my_activity_date_deadline
+#: model:ir.model.fields,field_description:das.field_das_account_reference__my_activity_date_deadline
+#: model:ir.model.fields,field_description:das.field_das_category__my_activity_date_deadline
+#: model:ir.model.fields,field_description:das.field_das_category_type__my_activity_date_deadline
+#: model:ir.model.fields,field_description:das.field_das_planning__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Échéance de mon activité"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__hours_not_planned
+msgid "NPL"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_fictional_batch__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_planning_division_wizard__new_account_id
+msgid "New Account"
+msgstr "Nouveau compte"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__activity_date_deadline
+#: model:ir.model.fields,field_description:das.field_das_account_reference__activity_date_deadline
+#: model:ir.model.fields,field_description:das.field_das_category__activity_date_deadline
+#: model:ir.model.fields,field_description:das.field_das_category_type__activity_date_deadline
+#: model:ir.model.fields,field_description:das.field_das_planning__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Date limite de l'Activité à Venir"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__activity_summary
+#: model:ir.model.fields,field_description:das.field_das_account_reference__activity_summary
+#: model:ir.model.fields,field_description:das.field_das_category__activity_summary
+#: model:ir.model.fields,field_description:das.field_das_category_type__activity_summary
+#: model:ir.model.fields,field_description:das.field_das_planning__activity_summary
+msgid "Next Activity Summary"
+msgstr "Résumé d'activité suivante"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__activity_type_id
+#: model:ir.model.fields,field_description:das.field_das_account_reference__activity_type_id
+#: model:ir.model.fields,field_description:das.field_das_category__activity_type_id
+#: model:ir.model.fields,field_description:das.field_das_category_type__activity_type_id
+#: model:ir.model.fields,field_description:das.field_das_planning__activity_type_id
+msgid "Next Activity Type"
+msgstr "Type d'activités à venir"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+msgid "No Fictif"
+msgstr "Sans fictif"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__message_needaction_counter
+#: model:ir.model.fields,field_description:das.field_das_account_reference__message_needaction_counter
+#: model:ir.model.fields,field_description:das.field_das_category__message_needaction_counter
+#: model:ir.model.fields,field_description:das.field_das_category_type__message_needaction_counter
+#: model:ir.model.fields,field_description:das.field_das_planning__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre d'actions"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__date_delta
+msgid "Number of days beetwen two dates"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__message_has_error_counter
+#: model:ir.model.fields,field_description:das.field_das_account_reference__message_has_error_counter
+#: model:ir.model.fields,field_description:das.field_das_category__message_has_error_counter
+#: model:ir.model.fields,field_description:das.field_das_category_type__message_has_error_counter
+#: model:ir.model.fields,field_description:das.field_das_planning__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: das
+#: model:ir.model.fields,help:das.field_das_account__message_needaction_counter
+#: model:ir.model.fields,help:das.field_das_account_reference__message_needaction_counter
+#: model:ir.model.fields,help:das.field_das_category__message_needaction_counter
+#: model:ir.model.fields,help:das.field_das_category_type__message_needaction_counter
+#: model:ir.model.fields,help:das.field_das_planning__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Nombre de messages exigeant une action"
+
+#. module: das
+#: model:ir.model.fields,help:das.field_das_account__message_has_error_counter
+#: model:ir.model.fields,help:das.field_das_account_reference__message_has_error_counter
+#: model:ir.model.fields,help:das.field_das_category__message_has_error_counter
+#: model:ir.model.fields,help:das.field_das_category_type__message_has_error_counter
+#: model:ir.model.fields,help:das.field_das_planning__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec des erreurs d'envoi"
+
+#. module: das
+#: model:ir.model,name:das.model_das_category
+msgid "Object for create new project category"
+msgstr ""
+
+#. module: das
+#: model:ir.ui.menu,name:das.menu_das_other_models
+msgid "Other models"
+msgstr "Autres modèles"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__pnf_hours
+msgid "PNF"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__prv_hours
+msgid "PRV"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__partner_id
+#: model:ir.ui.menu,name:das.menu_das_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account_reference__payment_condition
+msgid "Payment condition"
+msgstr "Condition de paiement"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__daily_planned
+msgid "Planned day"
+msgstr ""
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_planning_planning
+#: model:ir.actions.act_window,name:das.action_das_planning_planning_employee
+#: model:ir.model.fields,field_description:das.field_das_planning_date__planning_id
+#: model:ir.model.fields,field_description:das.field_planning_division_wizard__planning_id
+#: model:ir.model.fields,field_description:das.field_res_availability__planning_id
+#: model:ir.ui.menu,name:das.menu_das_planning_planning
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_date_tree
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_planning_gantt
+#: model_terms:ir.ui.view,arch_db:das.view_res_availability_form
+msgid "Planning"
+msgstr "Planification"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_date_gantt
+msgid "Planning Date"
+msgstr "Date planification"
+
+#. module: das
+#: model:ir.model,name:das.model_planning_division_wizard
+msgid "Planning Division Wizard"
+msgstr "Wizard Division Planification"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__planning_count
+#: model:ir.model.fields,field_description:das.field_hr_employee__planning_count
+msgid "Planning count"
+msgstr ""
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_planning_date
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_date_pivot
+msgid "Planning per date"
+msgstr "Planification par date"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__planning_ids
+#: model:ir.model.fields,field_description:das.field_hr_employee__planning_ids
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_account_form
+#: model_terms:ir.ui.view,arch_db:das.view_hr_employee_inherit
+msgid "Plannings"
+msgstr "Planifications"
+
+#. module: das
+#: model:ir.model,name:das.model_project_project
+#: model:ir.model.fields,field_description:das.field_das_account__project_id
+#: model:ir.model.fields,field_description:das.field_das_planning__project_id
+#: model:ir.model.fields,field_description:das.field_das_planning_date__project_id
+#: model:ir.ui.menu,name:das.menu_das_project
+msgid "Project"
+msgstr "Projet"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_category__category_project
+msgid "Project category"
+msgstr "Catégorie de projet"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__key
+msgid "Project key"
+msgstr "Clé du projet"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+msgid "Project manager"
+msgstr "Chef de projet"
+
+#. module: das
+#. odoo-python
+#: code:addons/das/models/res_config_settings.py:0
+#, python-format
+msgid "Purcentage must be between 0 and 100 !"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account_reference__reference
+msgid "Purchase Order"
+msgstr "Bon de commande"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__req
+msgid "REQ"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__rh_hours
+msgid "RH"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account_reference__rate_mga
+msgid "Rate MGA"
+msgstr "Cours en Ariary"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__reference
+msgid "Reference"
+msgstr "Référence"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__refresh
+msgid "Refresh"
+msgstr "Actualiser"
+
+#. module: das
+#. odoo-python
+#: code:addons/das/models/das_planning.py:0
+#, python-format
+msgid "Remaining working hours : %sh"
+msgstr "Nombre d'heures de travail restantes : %sh"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__resource_id
+#: model:ir.model.fields,field_description:das.field_das_planning_date__resource_id
+#: model:ir.model.fields,field_description:das.field_res_availability__resource_id
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_date_filter
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+#: model_terms:ir.ui.view,arch_db:das.view_res_availability_search
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: das
+#: model:ir.model,name:das.model_res_availability
+msgid "Resource Availability"
+msgstr "Disponibilité des ressources"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__resource_name
+msgid "Resource Name"
+msgstr "Nom de Ressource"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__resource_count
+msgid "Resource count"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__resource_reference
+msgid "Resource reference"
+msgstr "Référence ressource"
+
+#. module: das
+#: model_terms:ir.ui.view,arch_db:das.view_planning_fictional_wizard
+msgid "Resources"
+msgstr "Ressources"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__responsible_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__activity_user_id
+#: model:ir.model.fields,field_description:das.field_das_account_reference__activity_user_id
+#: model:ir.model.fields,field_description:das.field_das_category__activity_user_id
+#: model:ir.model.fields,field_description:das.field_das_category_type__activity_user_id
+#: model:ir.model.fields,field_description:das.field_das_planning__activity_user_id
+msgid "Responsible User"
+msgstr "Utilisateur Responsable"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__message_has_sms_error
+#: model:ir.model.fields,field_description:das.field_das_account_reference__message_has_sms_error
+#: model:ir.model.fields,field_description:das.field_das_category__message_has_sms_error
+#: model:ir.model.fields,field_description:das.field_das_category_type__message_has_sms_error
+#: model:ir.model.fields,field_description:das.field_das_planning__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Erreur d'envoi SMS"
+
+#. module: das
+#: model:ir.actions.act_window,name:das.action_das_config_settings
+#: model:ir.ui.menu,name:das.menu_das_config_settings
+msgid "Settings"
+msgstr "Configuration"
+
+#. module: das
+#. odoo-python
+#: code:addons/das/models/das_planning.py:0
+#, python-format
+msgid "Sorry, Daily working hours is between 0 to 8 !"
+msgstr "Désolé, les heures de travail quotidiennes sont de 0 à 8 !"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_availability_filter_wizard__start_date
+#: model:ir.model.fields,field_description:das.field_das_fictional_batch__start_date
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__start_date
+#: model:ir.model.fields,field_description:das.field_das_account_reference__start_date
+#: model:ir.model.fields,field_description:das.field_das_analysis__start_date
+#: model:ir.model.fields,field_description:das.field_das_planning__start_date
+#: model:ir.model.fields,field_description:das.field_planning_division_wizard__start_date
+#: model:ir.model.fields,field_description:das.field_planning_fictional_wizard__start_date
+#: model:ir.model.fields,field_description:das.field_res_availability__start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: das
+#: model:ir.model.fields,help:das.field_das_account__activity_state
+#: model:ir.model.fields,help:das.field_das_account_reference__activity_state
+#: model:ir.model.fields,help:das.field_das_category__activity_state
+#: model:ir.model.fields,help:das.field_das_category_type__activity_state
+#: model:ir.model.fields,help:das.field_das_planning__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Statut basé sur les activités\n"
+"En retard : la date d'échéance est déjà dépassée\n"
+"Aujourd'hui : la date d'activité est aujourd'hui\n"
+"Planifiée : activités futures"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__techno
+msgid "TECHNO"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account_reference__tjm
+msgid "TJM"
+msgstr ""
+
+#. module: das
+#: model:ir.model.constraint,message:das.constraint_das_account_reference_name_uniq
+#: model:ir.model.constraint,message:das.constraint_das_category_name_uniq
+#: model:ir.model.constraint,message:das.constraint_das_fictional_batch_name_uniq
+msgid "Tag name already exists!"
+msgstr "Ce nom d'étiquette existe déjà!"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__task_id
+#: model:ir.model.fields,field_description:das.field_das_planning_date__task_id
+msgid "Task"
+msgstr "Tâche"
+
+#. module: das
+#: model:project.project,label_tasks:das.das_fictional_project
+msgid "Tasks"
+msgstr "Tâches"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account_reference__to_pay_mga
+#: model_terms:ir.ui.view,arch_db:das.view_das_account_reference_form
+msgid "To pay mga"
+msgstr "A payer en Ariary"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__today
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_analysis__total_hours
+#: model:ir.model.fields,field_description:das.field_das_planning__total_hours
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_planning_form
+msgid "Total hours"
+msgstr "Heures totales"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning_date__total_resource
+msgid "Total resource"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__type_id
+#: model:ir.model.fields,field_description:das.field_das_account_reference__type_id
+#: model:ir.model.fields,field_description:das.field_das_category__type_id
+#: model:ir.model.fields,field_description:das.field_das_category_type__type
+#: model:ir.model.fields,field_description:das.field_das_planning__type_id
+#: model:ir.model.fields,field_description:das.field_das_planning_date__type_id
+#: model:ir.model.fields,field_description:das.field_res_availability__type_id
+#: model_terms:ir.ui.view,arch_db:das.view_das_planning_filter
+msgid "Type"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,help:das.field_das_account__activity_exception_decoration
+#: model:ir.model.fields,help:das.field_das_account_reference__activity_exception_decoration
+#: model:ir.model.fields,help:das.field_das_category__activity_exception_decoration
+#: model:ir.model.fields,help:das.field_das_category_type__activity_exception_decoration
+#: model:ir.model.fields,help:das.field_das_planning__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type d'activité d'exception enregistrée"
+
+#. module: das
+#. odoo-python
+#: code:addons/das/models/das_planning.py:0
+#: code:addons/das/models/das_planning.py:0
+#, python-format
+msgid "Warning"
+msgstr "Attention"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_account__website_message_ids
+#: model:ir.model.fields,field_description:das.field_das_account_reference__website_message_ids
+#: model:ir.model.fields,field_description:das.field_das_category__website_message_ids
+#: model:ir.model.fields,field_description:das.field_das_category_type__website_message_ids
+#: model:ir.model.fields,field_description:das.field_das_planning__website_message_ids
+msgid "Website Messages"
+msgstr "Messages du site web"
+
+#. module: das
+#: model:ir.model.fields,help:das.field_das_account__website_message_ids
+#: model:ir.model.fields,help:das.field_das_account_reference__website_message_ids
+#: model:ir.model.fields,help:das.field_das_category__website_message_ids
+#: model:ir.model.fields,help:das.field_das_category_type__website_message_ids
+#: model:ir.model.fields,help:das.field_das_planning__website_message_ids
+msgid "Website communication history"
+msgstr "Historique de communication du site web"
+
+#. module: das
+#: model:ir.actions.server,name:das.daily_calcul_cron_ir_actions_server
+#: model:ir.cron,cron_name:das.daily_calcul_cron
+#: model:ir.cron,name:das.daily_calcul_cron
+msgid "daily calcul updater"
+msgstr ""
+
+#. module: das
+#: model:ir.ui.menu,name:das.menu_das_planning_root
+#: model_terms:ir.ui.view,arch_db:das.view_das_config_setting_inherit
+msgid "ePlanning-IT"
+msgstr ""
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_planning__resource_id_active
+#: model:ir.model.fields,field_description:das.field_das_planning_date__resource_id_active
+msgid "hr.employee"
+msgstr "employé"
+
+#. module: das
+#: model:ir.model.fields,field_description:das.field_das_analysis__productivity
+msgid "productivity %"
+msgstr "productivité"

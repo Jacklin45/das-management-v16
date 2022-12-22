@@ -1,8 +1,29 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
+##############################################################################
+#
+#    OpenERP, Open Source Management Solution
+#    Copyright (C) 2022 eTech (<https://www.etechconsulting-mg.com/>). All Rights Reserved
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+
+from datetime import datetime, timedelta
 
 from odoo import models, fields, api, _
-from datetime import datetime, date, timedelta
-from odoo.exceptions import ValidationError
+
+NB_HOURS_PER_DAY = 8
 
 
 class DasPlanning(models.Model):
@@ -11,19 +32,19 @@ class DasPlanning(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = 'account_label'
 
-    resource_id = fields.Many2one('hr.employee', string="Resource", required=True, tracking=True)
+    resource_id = fields.Many2one('hr.employee', string="Resource", required=True, tracking=True, index=True)
     resource_id_active = fields.Boolean('hr.employee', related='resource_id.active',
                                         store=True)
     resource_departure_date = fields.Date(string="Departure date", related='resource_id.departure_date')
     resource_departure_reason_id = fields.Many2one(string="Departure reason", related='resource_id.departure_reason_id')
 
-    account_id = fields.Many2one('das.account', string="Account", required=True, tracking=True)
+    account_id = fields.Many2one('das.account', string="Account", required=True, tracking=True, index=True)
     start_date = fields.Date(string="Start date", default=fields.Date.today, required=True, tracking=True)
     end_date = fields.Date(string="End date", default=fields.Date.today, required=True, tracking=True)
     date_delta = fields.Integer(string="Number of days beetwen two dates", compute='_compute_date_delta', store=True)
     daily_hours = fields.Integer(string="Daily hours", default=8, tracking=True)
-    total_hours = fields.Integer(string="Total hours", compute='_calculate_total_hours', store=True, readonly=True)
-    account_label = fields.Char(string="Account label", compute='_compute_account_label', readonly=True)
+    total_hours = fields.Integer(string="Total hours", compute='_compute_total_hours', store=True, readonly=True)
+    account_label = fields.Char(string="Account label", compute='_compute_account_label')
     active = fields.Boolean(string="Active", default=True, tracking=True)
 
     department_id = fields.Many2one('hr.department', related='resource_id.department_id', store=True)
@@ -53,21 +74,24 @@ class DasPlanning(models.Model):
 
     @api.depends('resource_id', 'daily_hours', 'account_id')
     def _compute_account_label(self):
-        """Add daily hours in account reference to show in planning Gantt view"""
-        for planning in self:
-            planning.account_label = str(planning.daily_hours) + " h/j " + str(planning.account_id.key)
+        """
+        Add daily hours in account reference to show in planning Gantt view
+        :rtype: object
+        """
+        for rec in self:
+            rec.account_label = _("%s h/d %s") % (rec.daily_hours, rec.account_id.key)
 
     @api.depends('daily_hours', 'start_date', 'end_date')
-    def _calculate_total_hours(self):
-        for planning in self:
-            if planning.start_date:
-                day = planning.start_date
+    def _compute_total_hours(self):
+        for rec in self:
+            if rec.start_date:
+                day = rec.start_date
                 days_counter = 0
-                while day <= planning.end_date:
+                while day <= rec.end_date:
                     if day.weekday() < 5:
                         days_counter += 1
                     day += timedelta(days=1)
-                planning.total_hours = planning.daily_hours * days_counter
+                rec.total_hours = rec.daily_hours * days_counter
 
     @api.depends('start_date', 'end_date')
     def _compute_date_delta(self):
@@ -78,75 +102,105 @@ class DasPlanning(models.Model):
     def _check_daily_hours(self):
         """Check immediately (onchange) a valid daily working hours"""
         for planning in self:
-            if self.account_id and not self.account_id.type_id.is_no_counting and not 0 <= planning.daily_hours <= 8:
-                planning.daily_hours = 8
+            if self.account_id and not self.account_id.type_id.is_no_counting and not 0 <= planning.daily_hours <= NB_HOURS_PER_DAY:
+                planning.daily_hours = NB_HOURS_PER_DAY
                 return {'warning': {
-                    'title': 'Value Error',
+                    'title': _('Warning'),
                     'message': _("Sorry, Daily working hours is between 0 to 8 !"),
                 }}
 
     @api.onchange('resource_id', 'account_id', 'account_id.type_id.is_no_counting', 'start_date', 'end_date',
                   'daily_hours')
-    def _check_planning_existence(self):
+    def _check_planning(self):
+        """
+        Check planning
+        :rtype: object
+        """
         date = self.start_date
         if date:
             total_daily_hours = []
+            fictive_total_daily_hours = []
+            result = NB_HOURS_PER_DAY
             while date <= self.end_date:
-                days_planning_hours = self.env['das.planning'].search(
+                plainning_ids = self.env['das.planning'].search(
+                    [('resource_id', '=', self.resource_id.id)]).filtered(
+                    lambda p: p.start_date <= self.start_date <= p.end_date and p.account_id.type_id.id != self.env.ref(
+                        'das.das_fictional_type').id)
+                fictive_planning_ids = self.env['das.planning'].search(
                     [('resource_id', '=', self.resource_id.id), ('id', '!=', self._origin.id)]).filtered(
-                    lambda p: p.start_date <= date <= p.end_date).mapped('daily_hours')
-                total_daily_hours.append(sum(days_planning_hours))
+                    lambda p: p.start_date <= self.start_date <= p.end_date and p.account_id.type_id.id == self.env.ref(
+                        'das.das_fictional_type').id)
+                total_daily_hours.append(sum(plainning_ids.mapped('daily_hours')))
+                fictive_total_daily_hours.append(sum(fictive_planning_ids.mapped('daily_hours')))
                 date += timedelta(days=1)
 
-            for planning in self:
-                new_hour_limit = 8 - max(total_daily_hours)
-                if self.account_id and not self.account_id.type_id.is_no_counting and not 0 <= planning.daily_hours <= new_hour_limit:
-                    planning.daily_hours = new_hour_limit
-                    return {'warning': {
-                        'title': 'Attention',
-                        'message': _("Remaining working hours : " + str(new_hour_limit) + " h"),
-                    }}
+            if fictive_planning_ids:
+                result = max(fictive_total_daily_hours)
+            if plainning_ids:
+                result += max(total_daily_hours)
+            if self.account_id and not self.account_id.type_id.is_no_counting and not 0 <= self.daily_hours <= result:
+                self.daily_hours = result
+                return {'warning': {
+                    'title': _('Warning'),
+                    'message': _("Remaining working hours : %sh") % result,
+                }}
 
-    @api.constrains('resource_id', 'daily_hours', 'start_date', 'end_date')
-    def _check_resource_daily_hours(self):
-        resource_plannings = self.env['das.planning'].search(
-            [('resource_id', '=', self.resource_id.id), ('account_id.type_id.is_no_counting', '!=', True)])
-        planning_min_date = min(resource_plannings.mapped('start_date'))
-        planning_max_date = max(resource_plannings.mapped('end_date'))
-        date = planning_min_date
-        while date <= planning_max_date:
-            planning_days_hours = resource_plannings.filtered(lambda p: p.start_date <= date <= p.end_date).mapped(
-                'daily_hours')
-            if not self.account_id.type_id.is_no_counting and sum(
-                    planning_days_hours) > 8 or not self.account_id.type_id.is_no_counting and self.daily_hours == 0:
-                raise ValidationError(_('Daily working hours must be between 0 to 8 !'))
-            date += timedelta(days=1)
-
-    def create_planning_date(self):
+    def _create_planning_date(self):
+        """
+        Create planning date
+        :rtype: object
+        """
         date = self.start_date
         while date <= self.end_date:
-            leaves = self.env['resource.calendar.leaves'].search([]).filtered(
-                lambda l: l.date_from.date() <= date <= l.date_to.date())
-            if date.weekday() < 5 and not leaves:
+            leave_ids = self.env['resource.calendar.leaves'].search(
+                [('date_from', '>=', date), ('date_to', '<=', date)])
+            if date.weekday() < 5 and not leave_ids:
                 self.env['das.planning.date'].sudo().create({
                     'date': date,
                     'planning_id': self.id
                 })
             date += timedelta(days=1)
 
+    def _update_current_day(self):
+        """
+        Update current day if fictive exists
+        :rtype: object
+        """
+        planning_ids = self.env['das.planning'].search(
+            [('resource_id', '=', self.resource_id.id), ('id', '!=', self._origin.id)]).filtered(
+            lambda p: p.start_date <= self.start_date <= p.end_date and p.account_id.type_id.id != self.env.ref(
+                'das.das_fictional_type').id)
+        fictive_planning_ids = self.env['das.planning'].search(
+            [('resource_id', '=', self.resource_id.id), ('id', '!=', self._origin.id)]).filtered(
+            lambda p: p.start_date <= self.start_date <= p.end_date and p.account_id.type_id.id == self.env.ref(
+                'das.das_fictional_type').id)
+        planning_hours = sum(planning_ids.mapped('daily_hours')) if planning_ids else 0
+        if fictive_planning_ids:
+            result = NB_HOURS_PER_DAY - planning_hours - self.daily_hours + self._context.get('unlink_daily_hours', 0)
+            if result > 0:
+                fictive_planning_ids.daily_hours = result
+            else:
+                fictive_planning_ids.unlink()
+
+    # def unlink(self):
+    #     for rec in self:
+    #         rec.with_context(unlink_daily_hours=rec.daily_hours)._update_current_day()
+    #     res = super(DasPlanning, self).unlink()
+    #     return res
+
     @api.model
     def create(self, vals):
         res = super(DasPlanning, self).create(vals)
-        res.create_planning_date()
+        res._create_planning_date()
+        res._update_current_day()
         return res
 
     def write(self, vals):
-        # Modify Das planning per date if das planning model changed
         res = super(DasPlanning, self).write(vals)
-        for planning in self:
-            self.env['das.planning.date'].sudo().search([('planning_id', '=', planning.id)]).unlink()
-            if planning.active:
-                planning.create_planning_date()
+        self.env['das.planning.date'].sudo().search([('planning_id', '=', self.id)]).unlink()
+        if self.active:
+            self._create_planning_date()
+            self._update_current_day()
         return res
 
     @api.model

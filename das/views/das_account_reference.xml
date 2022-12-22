@@ -6,13 +6,14 @@
     <field name="model">das.account.reference</field>
     <field name="arch" type="xml">
       <tree string="Account reference">
+        <field name="currency_id" invisible="1"/>
+        <field name="tjm_currency_id" invisible="1"/>
         <field name="reference"/>
         <field name="budget"/>
-        <field name="to_pay_mga"/>
-        <field name="tjm"/>
+        <field name="to_pay_mga" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+        <field name="tjm" widget="monetary" options="{'currency_field': 'tjm_currency_id'}"/>
         <field name="start_date"/>
         <field name="end_date"/>
-        <field name="currency_id" invisible="1"/>
       </tree>
     </field>
   </record>
@@ -24,6 +25,8 @@
       <form string="Account reference">
         <sheet>
           <group>
+            <field name="currency_id" invisible="1"/>
+            <field name="tjm_currency_id" invisible="1"/>
             <group>
               <field name="reference"/>
               <field name="locality_id"/>
@@ -35,16 +38,11 @@
               <label for="budget">Budget</label>
               <div class="o_row">
                 <field name="budget" style="width:30px;"/>
-                <span>j</span>
+                <span>d</span>
               </div>
-              <field name="tjm" widget="monetary" options="{'currency_field': 'currency_id'}"/>
-              <field name="rate_mga"/>
-              <label for="to_pay_mga">To pay mga</label>
-              <div class="o_row">
-                <field name="to_pay_mga"/>
-                <span>Ar</span>
-              </div>
-              <field name="currency_id" invisible="1"/>
+              <field name="tjm" widget="monetary" options="{'currency_field': 'tjm_currency_id'}"/>
+              <field name="rate_mga" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+              <field name="to_pay_mga" widget="monetary" options="{'currency_field': 'currency_id'}"/>
               <field name="start_date"/>
               <field name="end_date"/>
             </group>

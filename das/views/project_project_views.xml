@@ -6,13 +6,11 @@
     <field name="model">project.project</field>
     <field name="inherit_id" ref="project.edit_project"/>
     <field name="arch" type="xml">
-
       <xpath expr="//div[@class='oe_button_box']" position="inside">
         <button class="oe_stat_button" name="get_project_account" type="object" icon="fa-folder">
           <field string="Accounts" name="account_count" widget="statinfo"/>
         </button>
       </xpath>
-
     </field>
   </record>
 
@@ -21,11 +19,9 @@
     <field name="model">project.project</field>
     <field name="inherit_id" ref="project.edit_project"/>
     <field name="arch" type="xml">
-
       <xpath expr="//field[@name='label_tasks']" position="before">
         <field name="key"/>
       </xpath>
-
     </field>
   </record>
 

@@ -1,8 +1,28 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
+##############################################################################
+#
+#    OpenERP, Open Source Management Solution
+#    Copyright (C) 2022 eTech (<https://www.etechconsulting-mg.com/>). All Rights Reserved
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
 
-from odoo import models, fields, api, _
-from datetime import datetime, date, timedelta
-from odoo.exceptions import UserError
+from dateutil import rrule
+from dateutil.rrule import MONTHLY
+
+from odoo import models, fields, api
 
 
 class PlanningFictionalWizard(models.TransientModel):
@@ -21,36 +41,35 @@ class PlanningFictionalWizard(models.TransientModel):
         if self.department_id:
             return {
                 'domain': {
-                    'resource_ids': [('department_id', '=', self.department_id.id), ('active', '=', True)],
+                    'resource_ids': [('department_id', '=', self.department_id.id)],
                 }
             }
 
     @api.depends('date', 'resource_ids', 'planning_id')
     def generate_fictional_planning(self):
-        """ This function  help user to generate monthly fictional planning for all resources"""
-        planing_date = self.env['das.planning.date'].search([])
-        resource_id = self.env['hr.employee']
-        date_planned = set(planing_date.search([('date', '>=', self.start_date)]).mapped('date'))
-        date_from = self.start_date
-        date_to = self.end_date
-        date_list = []
-        while date_from <= date_to:
-            if date_from.weekday() < 5:
-                date_list.append(date_from)
-            date_from += timedelta(days=1)
+        """
+        Generate monthly fictional planning for all resources
+        :rtype: object
+        """
+        planing_date_obj = self.env['das.planning.date']
 
-        account_id = self.env['das.account'].sudo().search(
-            [('reference', '=', '[fic_project] Fictional project [Fic Account ref]')]).id
-        for res in self.resource_ids.mapped('id'):
-            for date_to_plan in date_list:
-                if not planing_date.search(
-                        [('resource_id', '=', resource_id.browse(res).id), ('date', '=', date_to_plan),
-                         ('account_id', '=', account_id)]):
+        # Get all days of the current period except weekend
+        dates = list(rrule.rrule(MONTHLY,
+                                     byweekday=[0, 1, 2, 3, 4],
+                                     dtstart=self.start_date,
+                                     until=self.end_date))
+
+        account_id = self.env.ref('das.das_fictional_account')
+        for res in self.resource_ids:
+            for d in dates:
+                planning_ids = planing_date_obj.search(
+                    [('resource_id', '=', res.id), ('date', '=', d.date()), ('account_id', '=', account_id.id)])
+                if not planning_ids:
                     total_daily_hours = sum(self.env['das.planning.date'].search(
-                        [('resource_id', '=', resource_id.browse(res).id), ('date', '=', date_to_plan)]).mapped(
-                        'daily_hours'))
-                    self.env['das.planning'].sudo().create(
-                        {'resource_id': resource_id.browse(res).id,
-                         'account_id': account_id,
-                         'daily_hours': 8 - total_daily_hours,
-                         'start_date': date_to_plan, 'end_date': date_to_plan})
+                        [('resource_id', '=', res.id), ('date', '=', d.date())]).mapped('daily_hours'))
+                    self.env['das.planning'].sudo().create({
+                        'resource_id': res.id,
+                        'account_id': account_id.id,
+                        'daily_hours': 8 - total_daily_hours,
+                        'start_date': d.date(), 'end_date': d.date()
+                    })
