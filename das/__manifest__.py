@@ -23,9 +23,9 @@
     'name': 'ePlanning-IT',
     'summary': 'Manage ePlanning IT',
     'description': """
-    This apps helps to manage ePlanning IT.
-    =====================
-        """,
+This apps helps to manage ePlanning IT.
+=====================
+""",
     'author': "eTech Consulting",
     'website': "https://www.etechconsulting-mg.com/",
     'depends': ['das_base', 'das_project', 'das_hr', 'web_gantt'],
